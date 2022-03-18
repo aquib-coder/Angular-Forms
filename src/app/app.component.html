@@ -1,20 +1,9 @@
-<div class="container" >
-  <div class="row justify-content-center " >
-    <div class="form-bg col-md-5" >
-      <form #regForm='ngForm' (ngSubmit)="Register(regForm)" >
-      <h2 class="text-center" style="margin-top: 49px;">Registration page</h2>
-      <br>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="First Name" name="firstname" required ngModel>
-        <input type="text" class="form-control" placeholder="Last Name" name="lastname" required ngModel>
-        <input type="text" class="form-control" placeholder="Email" 
-        name="email" required ngModel email #email="ngModel">
-        <span class="help-bpx" *ngIf="!email.valid && email.touched">Please enter valid email</span>
-      </div>
-           
-        <button class="btn btn-primary" style="margin:16px"
-         id="Register" [disabled]="!regForm.valid">Register</button>
-      </form>
-    </div>
-  </div>
+<nav class="navbar">
+<div class="nav navbar">
+  <ul class="navbar-brand">
+    <li class="nav"><a routerLink='/registration'>Registration</a></li>
+    <li class="nav"><a routerLink='/feedback'>Feedback</a> </li>
+  </ul>
 </div>
+</nav>
+<router-outlet></router-outlet>

@@ -24,3 +24,12 @@ step3: On app.component.html write:
     </div>
   </div>
 </div>
+
+step 4: In app.component.css write:
+input[type=text]{
+    margin:16px;
+    padding: 7px;
+}
+input.ng-invalid.ng-touched{
+    border-color: red;
+}
