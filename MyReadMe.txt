@@ -11,32 +11,16 @@ step3: On app.component.html write:
       <h2 class="text-center" style="margin-top: 49px;">Registration page</h2>
       <br>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="First Name" name="firstname" ngModel>
-        <input type="text" class="form-control" placeholder="Last Name" name="lastname" ngModel>
-        <input type="text" class="form-control" placeholder="Email" name="email" ngModel>
+        <input type="text" class="form-control" placeholder="First Name" name="firstname" required ngModel>
+        <input type="text" class="form-control" placeholder="Last Name" name="lastname" required ngModel>
+        <input type="text" class="form-control" placeholder="Email" 
+        name="email" required ngModel email #email="ngModel">
+        <span class="help-bpx" *ngIf="!email.valid && email.touched">Please enter valid email</span>
       </div>
            
-        <button class="btn btn-primary" style="margin:16px" id="Register">Register</button>
+        <button class="btn btn-primary" style="margin:16px"
+         id="Register" [disabled]="!regForm.valid">Register</button>
       </form>
     </div>
   </div>
 </div>
-
-step4: On app.component.ts file write:
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'practiceFormsAngular';
-  Register(regForm:NgForm){
-    debugger;
-    var fn=regForm.controls['firstname'].value;
-    var ln=regForm.controls['lastname'].value;
-    var e=regForm.controls['email'].value;
-    console.log(regForm);
-  }
-}
