@@ -1,4 +1,4 @@
-input[type=text]{
+input[type=text],textarea{
     margin:16px;
     padding: 7px;
 }
