@@ -7,23 +7,24 @@ import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
 })
 export class FeedbackComponent implements OnInit {
 feedbackForm:FormGroup;
-name:string='';
-email:string='';
-feedback:string='';
+fname:string="";
+femail:string='';
+ffeedback:string='';
   constructor(private formBuilder:FormBuilder) {
     this.feedbackForm=formBuilder.group({
-      name:['',Validators.required,Validators.minLength(1)],
+      name:['',Validators.required],
       email:['',Validators.required,Validators.email],
       feedback:['',Validators.required]
     });
    }
   ngOnInit(): void {
   }
-  PostData(feedbackForm:any){
+  PostData(feedbackFormA:any){
     debugger;
-    var n=feedbackForm.controls.name.value;
-    var e=feedbackForm.controls.email.value;
-    var f=feedbackForm.controls.feedback.value;
-    console.log(feedbackForm);
+    var n=feedbackFormA.controls.name.value;
+    var e=feedbackFormA.controls.email.value;
+    var f=feedbackFormA.controls.feedback.value;
+    console.log(feedbackFormA);
   }
+  
 }

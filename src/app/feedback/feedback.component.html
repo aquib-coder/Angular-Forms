@@ -7,11 +7,11 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Name" 
           formControlName="name" required >
-          <span *ngFor="feedbackForm.control['name'].haserror(required)">Name required!</span>
-          <input type="text" class="form-control" placeholder="Email" 
+          <span *ngIf="feedbackForm.controls['name'].hasError('required')">Enter name!!</span> </div>
+          <div class="form-group"><input type="text" class="form-control" placeholder="Email" 
          formControlName="email" required  email >
-          <span class="help-bpx" >Please enter valid email</span>
-          <textarea rows="5" class="form-control" placeholder="Enter the Feedback" 
+          <span class="help-bpx" >Please enter valid email</span></div>   
+          <div class="form-group"><textarea rows="5" class="form-control" placeholder="Enter the Feedback" 
           formControlName="feedback" required ></textarea>
            </div>             
           <button class="btn btn-primary" style="margin:16px"
